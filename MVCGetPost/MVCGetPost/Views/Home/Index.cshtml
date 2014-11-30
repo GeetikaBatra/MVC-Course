@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Welcome!<br/>
+        <form  method='get' action='Test/GotoThisAction'> <! form tag is neccessary bcoz without this submit button wont hit to the server>
+        <table>
+            <tr>
+                <td>Enter Your Name:</td>
+                <td>
+                    <input id='Name' name='N_Name' type='text' value='' />
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your Age:</td>
+                <td>
+                    <input id='Age' name='N_Age' type='text' value='' />
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><input type='submit' value='submit' /> </td> <!here type should not be button but it should be submit so that it hits to the server>
+            </tr>
+        </table>
+            </form>
+    </div>
+</body>
+</html>
