@@ -1,6 +1,11 @@
 ﻿
 @{
     Layout = null;
+    List<HtmlHelperClasses.Qual> QL = new List<HtmlHelperClasses.Qual>();
+    QL.Add(new HtmlHelperClasses.Qual() { id=1, Q="B.Tech"});
+    QL.Add(new HtmlHelperClasses.Qual() { id =2, Q = "MBA" });
+    QL.Add(new HtmlHelperClasses.Qual() { id = 3, Q = "MCA" });
+    QL.Add(new HtmlHelperClasses.Qual() { id = 4, Q = "M.tech" });
 }
 
 <!DOCTYPE html>
@@ -40,13 +45,15 @@
                 <tr>
                     <td>select your Qualification:</td>
                     <td>
-                        <select id="Qualification" name="Qualification">
-                            <option value="1"></option>
-                            <option value="2">B.Tech</option>
-                            <option value="3">M.tech</option>
-                            <option value="4">MCA</option>
-                                <option value="5">MBA</option>
-                        </select>
+                        @Html.DropDownList("Qualification",new SelectList(QL,"id","Q"))
+                        @Html.ListBox("QualificationList", new SelectList(QL, "id", "Q"))
+                       @*<select id="Qualification" name="Qualification">
+        <option value="1"></option>
+        <option value="2">B.Tech</option>
+        <option value="3">M.tech</option>
+        <option value="4">MCA</option>
+            <option value="5">MBA</option>
+    </select>*@ 
                     </td>
                 </tr>
                 <tr>
