@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+       @*<form action="/Home/Insert" method="post"> this can be replaced by begin form tag*@ 
+        @using(Html.BeginForm("Insert","Home",FormMethod.Post))
+        {
+            
+        
+            <table>
+                <tr>
+                   <td>@*Enter Your Name:This can be written as *@ @Html.Label("Enter Your Name:") </td>
+                    <td>
+                        @*<input id="Name" name="Name" type="text" value="" /> This can be written as *@ @Html.TextBox("Name")
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Enter Your Age:")</td>
+                    <td>
+                        @*<input id="Age" name="Age" type="text" value="" />*@ @Html.TextBox("Age")
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Select Your Gender")</td>
+                    <td>
+                        @*<input id="Gender" name="Gender" type="radio" value="Male" />*@ @Html.RadioButton("Gender","M")<span>Male</span>
+                        @*<input id="Gender" name="Gender" type="radio" value="Female" />*@@Html.RadioButton("Gender", "F")<span>Female</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>select your Qualification:</td>
+                    <td>
+                        <select id="Qualification" name="Qualification">
+                            <option value="1"></option>
+                            <option value="2">B.Tech</option>
+                            <option value="3">M.tech</option>
+                            <option value="4">MCA</option>
+                                <option value="5">MBA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Enter your Address")</td>
+                    <td>
+                        @Html.TextArea("Address")@*<textarea cols="20" id="Address" name="Address" rows="2"></textarea>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.Label("Enter your Email Address")</td>@*Enter your Email Address*@
+                    <td>
+                        @Html.TextBox("Email")@*<input id="Email" name="Email" type="text" value="" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("I Agree Terms and Conditions") @*I Agree Terms and Conditions*@
+                    </td>
+                    <td>
+                        @Html.CheckBox("Accept",true) @*<input id="Accept" name="Accept" type="checkbox" value="true">*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Upload your Resume")
+
+                    </td>
+                    <td>
+                         @Html.TextBox("Resume", "", new { type = "file" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       @Html.TextBox("Test","Submit","",new{type="submit"}) @*<input type="submit" value="submit" />*@
+
+                    </td>
+                    <td>    
+                        @*<input type="reset" />*@ @Html.TextBox("Reset","Reset","", new { type = "Reset" }) 
+                    </td>
+                </tr>
+            </table>
+        @*</form>*@
+        }
+
+
+
+    </div>
+</body>
+</html>
