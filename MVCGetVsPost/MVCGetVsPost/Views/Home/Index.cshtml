@@ -12,13 +12,42 @@
 </head>
 <body>
     <div>
-        Welcome!!
+        Welcome!!@DateTime.Now.ToString() <b>Good</b><br/>
+
+        @{
+            int a = 5, b = 4;
+            int c = a + b;
+            int[] arr = { 1, 2, 3, 4, 5 };
+        }
+        <br/>
+        Your result is @c.
+
+        @if(a>b)
+        {
+            <p> Greater is @a </p>
+        }
+        else
+        {
+            <p> Greater is @b </p>
+        }
+        <ul>
+            @foreach(var item in arr)
+        {
+                <li>@item</li> 
+        }
+        </ul>
+        @{ 
+            DateTime dt=new DateTime();
+          
+        }
+        <p>My Email is geetika791@@gmail.com</p>
         <form method="post" action="Home\MyActionSubmit">
         <table>
             <tr>
                 <td>Enter your Name:</td>
                 <td>
-                    <input id='Name' name='N_Name' type='text' value='' />
+                    @*<input id='Name' name='N_Name' type='text' value='' />  This is a text box,this textbox can also be written using HTML helper classes*@
+                    @Html.TextBox("N_Name")@*N_Name sets the ID as well as name of the textbox,We use html helper classes to reduce the code*@
                 </td>
             </tr>
             <tr>
