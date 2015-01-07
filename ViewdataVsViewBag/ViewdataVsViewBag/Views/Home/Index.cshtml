@@ -30,10 +30,16 @@
                             @Html.Label("Name:")
                         </td>
                         <td>
-                           @if(ViewData["N"]!=null)
-                           {
-                               <p> @ViewData["N"].ToString() </p>
-                           }
+                          @* @if(ViewData["N"]!=null)
+    {
+        <p> @ViewData["N"].ToString() </p>
+    }*@
+                          @*  @if (ViewBag.N != null)
+                            {
+                                <p> @ViewBag.N.ToString() </p>
+                            }*@
+
+                            <p> @ViewBag.N </p> @*This would suffice and ViewBag has advantage over ViewData that is no need to check for nulls*@
                         </td>
                     </tr>
                     <tr>
@@ -43,9 +49,14 @@
 
 
                         <td>
-                            @if (ViewData["A"] != null)
+                           @* @if (ViewData["A"] != null)
+    {
+        <p> @ViewData["A"].ToString() </p>
+    }*@
+
+                            @if (ViewBag.A != null)
                             {
-                                <p> @ViewData["A"].ToString() </p>
+                                <p> @ViewBag.A.ToString() </p>
                             }
                         </td>
                     </tr>
