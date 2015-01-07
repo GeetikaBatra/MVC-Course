@@ -1,6 +1,10 @@
 ﻿
 @{
+    //ViewdataVsViewBag.tbl_MyTable obj = (ViewdataVsViewBag.tbl_MyTable)ViewBag.O;
+    //Another advantage of ViewBag is that there is no need of typecasting
+    ViewdataVsViewBag.tbl_MyTable obj = ViewBag.O;
     Layout = null;
+    
 }
 
 <!DOCTYPE html>
@@ -30,6 +34,10 @@
                             @Html.Label("Name:")
                         </td>
                         <td>
+                           @if (obj != null)
+                           {
+                            <p>@obj.Name</p>
+                           }
                           @* @if(ViewData["N"]!=null)
     {
         <p> @ViewData["N"].ToString() </p>
@@ -39,7 +47,7 @@
                                 <p> @ViewBag.N.ToString() </p>
                             }*@
 
-                            <p> @ViewBag.N </p> @*This would suffice and ViewBag has advantage over ViewData that is no need to check for nulls*@
+                            @*<p> @ViewBag.N </p>*@ @*This would suffice and ViewBag has advantage over ViewData that is no need to check for nulls*@
                         </td>
                     </tr>
                     <tr>
@@ -53,11 +61,16 @@
     {
         <p> @ViewData["A"].ToString() </p>
     }*@
-
-                            @if (ViewBag.A != null)
+                            @*@if (ViewBag.A != null)
+    {
+        <p> @ViewBag.A.ToString() </p>
+    }*@                 
+                           @if(obj!=null)
                             {
-                                <p> @ViewBag.A.ToString() </p>
+                             <p> @obj.Age </p>
+                            
                             }
+                            
                         </td>
                     </tr>
                     <tr>
