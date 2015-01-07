@@ -2,6 +2,7 @@
 @{
     //ViewdataVsViewBag.tbl_MyTable obj = (ViewdataVsViewBag.tbl_MyTable)ViewBag.O;
     //Another advantage of ViewBag is that there is no need of typecasting
+    List<ViewdataVsViewBag.tbl_MyTable> ListObj = ViewBag.LR;
     ViewdataVsViewBag.tbl_MyTable obj = ViewBag.O;
     Layout = null;
     
@@ -15,6 +16,26 @@
     <title>Index</title>
 </head>
 <body>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Age</td>
+
+        </tr>
+        @foreach (var item in ListObj)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+
+            </tr>
+
+        }
+    </table>
+
+
     <div>
         @using (Html.BeginForm("Read", "Home", FormMethod.Post))
         {

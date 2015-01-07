@@ -12,6 +12,9 @@ namespace ViewdataVsViewBag.Controllers
         GetPostEntities OE = new GetPostEntities();
         public ActionResult Index()
         {
+            var AllRecords = OE.tbl_MyTable.ToList();
+            ViewBag.LR = AllRecords;
+
             return View();
         }
         public ActionResult Read(int ID)
