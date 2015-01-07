@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Read", "Home", FormMethod.Post))
+        {
+            <fieldset>
+                <legend>tbl_MyTable</legend>
+                <table>
+                    <tr>
+                        <td>
+                            @Html.Label("Enter Id Here:")
+                        </td>
+                        <td>
+                            @Html.TextBox("ID")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Name:")
+                        </td>
+                        <td>
+                           @if(ViewData["N"]!=null)
+                           {
+                               <p> @ViewData["N"].ToString() </p>
+                           }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Age")
+                        </td>
+
+
+                        <td>
+                            @if (ViewData["A"] != null)
+                            {
+                                <p> @ViewData["A"].ToString() </p>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBox("Sub", "Submit", "", new { type = "submit" })
+                        </td>
+                    </tr>
+
+                </table>
+            </fieldset>
+        }
+
+    </div>
+</body>
+</html>
