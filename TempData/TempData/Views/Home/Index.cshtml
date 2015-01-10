@@ -12,6 +12,11 @@
 </head>
 <body>
     @ViewBag.M
+    @if(TempData["msg"]!=null)
+    {
+        @TempData["msg"]
+        TempData.Keep("msg"); @*//or  TempData.Keep("msg") for a particular msg to be kept in temp data*@
+    }
     <div> 
         @using(Html.BeginForm("Insert","Home"))
         {
@@ -42,7 +47,9 @@
                     </td>
                 </tr>
             </table>
-        }
+        } 
+
+        @Html.ActionLink("Go To Test","Test","Home")
 
 
     </div>

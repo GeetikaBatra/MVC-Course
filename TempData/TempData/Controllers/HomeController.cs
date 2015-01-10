@@ -10,11 +10,11 @@ namespace TempData.Controllers
     {
         public ActionResult Index()
         {
-            if (TempData["msg"] != null)
-            {
-                string m = TempData["msg"].ToString();
-                ViewBag.M = m;
-            }
+            //if (TempData["msg"] != null)
+            //{
+            //    string m = TempData["msg"].ToString();
+            //    ViewBag.M = m;
+            //}
            
             return View();
         }
@@ -37,8 +37,20 @@ namespace TempData.Controllers
                 msg = "Record not inserted";
             }
             TempData["msg"] = msg;
+            TempData.Keep();//or  TempData.Keep("msg") for a particular msg to be kept in temp data
             return RedirectToAction("Index");
            
+        }
+
+        public ActionResult Test()
+        {
+            if (TempData["msg"]!= null)
+            {
+                string m = TempData["msg"].ToString();
+                ViewBag.M = m;
+            }
+
+            return View();
         }
 
       
