@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -81,6 +82,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scriptss\bootstrap.js" />
+    <Content Include="Scriptss\bootstrap.min.js" />
+    <None Include="Scriptss\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scriptss\jquery-1.10.2.js" />
+    <Content Include="Scriptss\jquery-1.10.2.min.js" />
+    <None Include="Scriptss\jquery.validate-vsdoc.js" />
+    <Content Include="Scriptss\jquery.validate.js" />
+    <Content Include="Scriptss\jquery.validate.min.js" />
+    <Content Include="Scriptss\jquery.validate.unobtrusive.js" />
+    <Content Include="Scriptss\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scriptss\modernizr-2.6.2.js" />
+    <Content Include="Scriptss\respond.js" />
+    <Content Include="Scriptss\respond.min.js" />
+    <None Include="Scriptss\_references.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +112,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Scriptss\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
