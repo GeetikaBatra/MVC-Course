@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+@model ValidartionExample.Models.User
+<body>
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+    {  
+        <div>
+            <h4>User</h4>
+            <br />
+       
+        <div>
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div>
+        @Html.EditorFor(model => model.UserName)
+        @Html.ValidationMessageFor(model=>model.UserName)
+       </div>
+        <div>
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ConfirmPassword)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Qualification)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Qualification)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Gender)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.CurrentCTC)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.CurrentCTC)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ExpectedCTC)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ExpectedCTC)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Email)
+        </div>
+        
+        <div>
+            @Html.LabelFor(model => model.URL)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.URL)
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Create" />
+            </div>
+        </div>
+    </div>
+    }
+</body>
+</html>
