@@ -10,13 +10,20 @@ namespace ValidartionExample.Models
     {
         [Required(ErrorMessage="UserNameRequired")]
         public string UserName { get; set; }
-        public string Password{ get; set; }
+        public string Password{ get; set; }//Comparing Passwords with Confirm Password
+
+        [Compare("Password")]
+        [Required(ErrorMessage="Confirm Password required")]
         public string ConfirmPassword { get; set; }
         public string Qualification { get; set; }
         public string Gender { get; set; }
         public string CurrentCTC { get; set; }
+
+        [Range(8,12)]
         public string ExpectedCTC { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
+        [Url]
         public string URL { get; set; }
 
     }
