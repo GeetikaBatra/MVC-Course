@@ -15,6 +15,7 @@ namespace ValidartionExample.Models
         [Compare("Password")]
         [Required(ErrorMessage="Confirm Password required")]
         public string ConfirmPassword { get; set; }
+        [Required(ErrorMessage="Qualification Required")]
         public string Qualification { get; set; }
         public string Gender { get; set; }
         public string CurrentCTC { get; set; }

@@ -36,12 +36,15 @@
         </div>
         <div>
             @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(Model=>Model.ConfirmPassword)
         </div>
         <div>
             @Html.LabelFor(model => model.Qualification)
         </div>
-        <div>
-            @Html.EditorFor(model => model.Qualification)
+            <div>
+                @Html.DropDownListFor(model => model.Qualification, (List<SelectListItem>)ViewBag.Qualifications)
+                @Html.ValidationMessageFor(Model => Model.Qualification)
+            </div>
         </div>
         <div>
             @Html.LabelFor(model => model.Gender)
@@ -79,7 +82,7 @@
                 <input type="submit" value="Create" />
             </div>
         </div>
-    </div>
+ 
     }
 </body>
 </html>
