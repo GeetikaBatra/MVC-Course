@@ -6,21 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FormValidationEdm.Models;
+using EdmValidation.Models;
 
-namespace FormValidationEdm.Controllers
+namespace EdmValidation.Controllers
 {
-    public class tbl_DepartmentController : Controller
+    public class HomeController : Controller
     {
         private DepartmentEntities db = new DepartmentEntities();
 
-        // GET: tbl_Department
+        // GET: Home
         public ActionResult Index()
         {
             return View(db.tbl_Department.ToList());
         }
 
-        // GET: tbl_Department/Details/5
+        // GET: Home/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace FormValidationEdm.Controllers
             return View(tbl_Department);
         }
 
-        // GET: tbl_Department/Create
+        // GET: Home/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: tbl_Department/Create
+        // POST: Home/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace FormValidationEdm.Controllers
             return View(tbl_Department);
         }
 
-        // GET: tbl_Department/Edit/5
+        // GET: Home/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace FormValidationEdm.Controllers
             return View(tbl_Department);
         }
 
-        // POST: tbl_Department/Edit/5
+        // POST: Home/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace FormValidationEdm.Controllers
             return View(tbl_Department);
         }
 
-        // GET: tbl_Department/Delete/5
+        // GET: Home/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace FormValidationEdm.Controllers
             return View(tbl_Department);
         }
 
-        // POST: tbl_Department/Delete/5
+        // POST: Home/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

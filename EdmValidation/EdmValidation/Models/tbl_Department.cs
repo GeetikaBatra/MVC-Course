@@ -9,14 +9,15 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-namespace FormValidationEdm.Models
+    
+namespace EdmValidation.Models
 {
    
     public partial class tbl_Department
     {
-        [Key]
         public int D_Id { get; set; }
-        [Required]//We have manually done this,If we update the database this will be removed automatically,so we create a another class called meta class.
+
+
         public string D_Name { get; set; }
         public string HOD { get; set; }
     }

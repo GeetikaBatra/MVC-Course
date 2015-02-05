@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormValidationEdm.Models
+namespace EdmValidation.Models
 {
     using System;
     using System.Data.Entity;
